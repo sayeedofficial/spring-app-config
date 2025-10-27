@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring-app-config
+
+server:
+  port: 8080
+
+# Application Configuration
+app:
+  name: Spring App Config Demo
+  description: A demonstration of Spring Boot configuration management
+  version: 1.0.0
+  features:
+    - Configuration Properties
+    - YAML Configuration
+    - Profile Management
