@@ -1,7 +1,6 @@
 package com.example.springappconfig.controller;
 
 import com.example.springappconfig.config.AppConfigProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +12,11 @@ import java.util.Map;
 @RequestMapping("/api")
 public class ConfigController {
 
-    @Autowired
-    private AppConfigProperties appConfigProperties;
+    private final AppConfigProperties appConfigProperties;
+
+    public ConfigController(AppConfigProperties appConfigProperties) {
+        this.appConfigProperties = appConfigProperties;
+    }
 
     @GetMapping("/config")
     public Map<String, Object> getConfig() {
